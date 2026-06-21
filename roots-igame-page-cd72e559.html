@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 站点介绍 | roots-igame.com</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fafafa;
+      color: #1f2937;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      line-height: 1.7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2.5rem 1.25rem;
+      min-height: 100vh;
+    }
+
+    .page-wrap {
+      max-width: 720px;
+      width: 100%;
+    }
+
+    /* 主视觉 — 极简卡片式 Hero */
+    .hero {
+      background: #ffffff;
+      border-radius: 32px;
+      padding: 2.5rem 2rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 20px rgba(0,0,0,0.02);
+      border: 1px solid #eaeef2;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .hero:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+
+    .hero h1 {
+      font-size: 2.25rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #111827;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .hero .subhead {
+      font-size: 1.125rem;
+      color: #4b5563;
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+      max-width: 90%;
+    }
+
+    .hero p {
+      color: #374151;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    .hero a:hover {
+      border-bottom-color: #2563eb;
+    }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .info-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 1.75rem 2rem;
+      border: 1px solid #eaeef2;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+      transition: all 0.2s;
+    }
+
+    .info-card:hover {
+      border-color: #cdd9e6;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .info-card h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .info-card .card-icon {
+      font-size: 1.4rem;
+      margin-right: 0.4rem;
+      display: inline-block;
+      vertical-align: middle;
+      opacity: 0.7;
+    }
+
+    .info-card p, .info-card li {
+      color: #374151;
+      margin-bottom: 0.5rem;
+    }
+
+    .info-card ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.5rem;
+    }
+
+    .info-card li::before {
+      content: "·";
+      color: #9ca3af;
+      font-weight: bold;
+      display: inline-block;
+      width: 1.2rem;
+      margin-left: -1.2rem;
+    }
+
+    .info-card a {
+      color: #2563eb;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    .info-card a:hover {
+      border-bottom-color: #2563eb;
+    }
+
+    /* 适合人群 – 横向标签风格 */
+    .audience-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 0.75rem;
+      margin-top: 0.75rem;
+    }
+
+    .audience-tag {
+      background: #f1f5f9;
+      padding: 0.35rem 1rem;
+      border-radius: 100px;
+      font-size: 0.875rem;
+      color: #1f2937;
+      border: 1px solid transparent;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .audience-tag:hover {
+      background: #e2e8f0;
+      border-color: #cbd5e1;
+    }
+
+    /* 自然链接段落 */
+    .link-paragraph {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 1.75rem 2rem;
+      margin-bottom: 2.5rem;
+      border: 1px solid #eaeef2;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+    }
+
+    .link-paragraph p {
+      margin-bottom: 0.75rem;
+      color: #374151;
+    }
+
+    .link-paragraph p:last-child {
+      margin-bottom: 0;
+    }
+
+    .link-paragraph a {
+      color: #1d4ed8;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      font-weight: 500;
+      transition: border-color 0.15s;
+    }
+
+    .link-paragraph a:hover {
+      border-bottom-color: #1d4ed8;
+    }
+
+    /* FAQ 摘要 */
+    .faq-summary {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 1.5rem 2rem;
+      border: 1px solid #eaeef2;
+      margin-bottom: 2.5rem;
+    }
+
+    .faq-summary h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #111827;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+    }
+
+    .faq-item {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #f0f3f7;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      font-weight: 500;
+      color: #1f2937;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-answer {
+      color: #4b5563;
+      font-size: 0.95rem;
+    }
+
+    .faq-answer a {
+      color: #2563eb;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+
+    .faq-answer a:hover {
+      border-bottom-color: #2563eb;
+    }
+
+    /* 脚注 */
+    .footnote {
+      text-align: center;
+      color: #6b7280;
+      font-size: 0.8rem;
+      padding: 1.5rem 0 0.5rem;
+      border-top: 1px solid #e5e9ef;
+      margin-top: 0.5rem;
+    }
+
+    .footnote a {
+      color: #6b7280;
+      text-decoration: none;
+      border-bottom: 1px dotted #c4cdd8;
+    }
+
+    .footnote a:hover {
+      color: #1f2937;
+      border-bottom-color: #1f2937;
+    }
+
+    /* 响应式 */
+    @media (max-width: 520px) {
+      body {
+        padding: 1.5rem 0.75rem;
+      }
+
+      .hero {
+        padding: 1.75rem 1.25rem;
+        border-radius: 24px;
+      }
+
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+
+      .info-card, .link-paragraph, .faq-summary {
+        padding: 1.25rem 1.25rem;
+        border-radius: 20px;
+      }
+
+      .audience-wrap {
+        gap: 0.4rem 0.6rem;
+      }
+
+      .audience-tag {
+        font-size: 0.8rem;
+        padding: 0.25rem 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+    <!-- 主视觉 / Hero -->
+    <div class="hero">
+      <h1>爱游戏 · 站点介绍</h1>
+      <div class="subhead">roots-igame.com — 信息说明与可信参考</div>
+      <p>
+        <strong>爱游戏</strong> 是一个以游戏信息交流与内容索引为主要方向的网站。站点名称中的 “iGame” 取 “互动游戏” 之意，面向中文用户提供经过整理的资源指引、资讯摘要与社区参考。这里不是游戏下载平台，而是一处提供轻量信息聚合的窗口。
+      </p>
+      <p>
+        网站运营者注重内容的可溯源性，所有外部链接均标注出处或语境，避免模糊推荐。如果你希望快速了解某个游戏品类或查找相关讨论，<a href="https://roots-igame.com">爱游戏</a> 可以作为你探索的起点之一。
+      </p>
+    </div>
+
+    <!-- 用途卡片 -->
+    <div class="card-grid">
+      <div class="info-card">
+        <h2><span class="card-icon">📋</span> 用途卡片 · 信息筛选</h2>
+        <p>
+          站内内容按主题组织为卡片式摘要，涵盖规则解读、版本动态、赛事简讯与玩家经验。每张卡片均标注来源类型（官方公告 / 社区整理 / 媒体编译），方便你快速判断信息质量。
+        </p>
+        <ul>
+          <li>游戏版本更新与活动时间线</li>
+          <li>常见机制说明与术语浅析</li>
+          <li>社区讨论热点与长文索引</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h2><span class="card-icon">🔄</span> 场景参考 · 日常使用</h2>
+        <p>
+          无论是想回顾某款游戏的早期设定，还是对比不同服务器的运营策略，<a href="https://roots-igame.com">爱游戏</a> 都提供了经过比对的参考条目。适合以下场景：
+        </p>
+        <ul>
+          <li>查阅游戏历史更新梳理</li>
+          <li>寻找特定玩法的社区讨论原文</li>
+          <li>了解赛事规则变迁的简明脉络</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 适合人群 -->
+    <div class="info-card" style="margin-bottom: 2.5rem;">
+      <h2><span class="card-icon">👥</span> 适合人群</h2>
+      <p>内容偏向信息整理与资料索引，适合对游戏有一定基础了解、希望节省搜索时间的玩家或爱好者。</p>
+      <div class="audience-wrap">
+        <span class="audience-tag">单机与联机玩家</span>
+        <span class="audience-tag">赛事关注者</span>
+        <span class="audience-tag">游戏机制考据</span>
+        <span class="audience-tag">社区内容读者</span>
+        <span class="audience-tag">版本更新跟踪</span>
+        <span class="audience-tag">轻量信息搜集</span>
+      </div>
+    </div>
+
+    <!-- 自然链接段落：可信说明 -->
+    <div class="link-paragraph">
+      <p>
+        <strong>关于可信度说明：</strong> 本站（<a href="https://roots-igame.com">爱游戏</a>）的内容编辑流程遵循内部校准原则：每篇摘要都会注明原始出处或参考链接，不自行生成未经核实的数据。对于玩家社群中的争议性话题，站内会并列呈现不同观点并标注来源社区。如果你发现信息存在偏差，欢迎通过站内联系渠道提交反馈，我们会定期复核并更新。
+      </p>
+      <p>
+        此外，站内不嵌入第三方广告或推广脚本，页面仅使用基础统计工具了解访问趋势，不追踪个人身份信息。你可以放心将 <a href="https://roots-igame.com">爱游戏</a> 加入书签，作为日常信息参考的固定节点。
+      </p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-summary">
+      <h3>📌 常见问题摘要</h3>
+      <div class="faq-item">
+        <span class="faq-question">Q：网站是否提供游戏下载或安装包？</span>
+        <div class="faq-answer">A：不提供。所有内容均为信息索引与资料整理，不含任何安装文件或破解资源。</div>
+      </div>
+      <div class="faq-item">
+        <span class="faq-question">Q：内容更新频率如何？</span>
+        <div class="faq-answer">A：视游戏社区动态而定，重大版本或赛事期间会集中整理，常态每周更新 1–3 篇摘要。</div>
+      </div>
+      <div class="faq-item">
+        <span class="faq-question">Q：如何确认信息的时效性？</span>
+        <div class="faq-answer">A：每篇卡片右上角标注最近核实日期，部分动态内容附有原文发布时间。你也可以直接对比源链接。</div>
+      </div>
+      <div class="faq-item">
+        <span class="faq-question">Q：是否接受玩家投稿或内容建议？</span>
+        <div class="faq-answer">A：接受，具体方式见站内「联系与提交」页面。建议附上参考来源，以便编辑评估。</div>
+      </div>
+      <div class="faq-item" style="border-bottom: none;">
+        <span class="faq-question">Q：网站和官方游戏公司有关系吗？</span>
+        <div class="faq-answer">A：没有。这是一个独立的个人维护项目，与任何游戏开发商、发行商或平台均无隶属关系。更多背景可浏览 <a href="https://roots-igame.com">爱游戏</a> 的关于页面。</div>
+      </div>
+    </div>
+
+    <!-- 脚注 -->
+    <div class="footnote">
+      <span>roots-igame.com  ·  内容仅供参考，不构成任何形式的推荐或担保  ·  站点版本 2025</span><br>
+      <span style="display: inline-block; margin-top: 0.4rem;"><a href="https://roots-igame.com">爱游戏</a></span>
+    </div>
+  </div>
+</body>
+</html>
