@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>赛季索引 · 英超直播信息集</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans SC", "Helvetica Neue", sans-serif;
+      background: #f9f6f0;
+      color: #2e2b27;
+      line-height: 1.7;
+      padding: 2rem 1.2rem 4rem;
+    }
+
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* 文章容器 — 柔和排版 */
+    .article-card {
+      background: #fffcf7;
+      border-radius: 28px;
+      padding: 2.8rem 2.2rem;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.04);
+      transition: box-shadow 0.2s ease;
+    }
+
+    /* 标题层级 */
+    h1 {
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4rem;
+      color: #1f1c18;
+      line-height: 1.2;
+    }
+
+    .subhead {
+      font-size: 0.95rem;
+      color: #7a7166;
+      margin-bottom: 2rem;
+      border-left: 3px solid #d4c9ba;
+      padding-left: 1rem;
+      font-style: normal;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin: 2.2rem 0 0.8rem;
+      color: #302b25;
+      border-bottom: 1px solid #ece6db;
+      padding-bottom: 0.4rem;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin: 1.8rem 0 0.6rem;
+      color: #403a32;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+    }
+
+    /* 引用 / 提示块 — 朴素有质感 */
+    .callout {
+      background: #f0ebe2;
+      border-radius: 20px;
+      padding: 1.4rem 1.8rem;
+      margin: 2rem 0;
+      border-left: 5px solid #b7a68f;
+      font-size: 0.95rem;
+      color: #3d352c;
+    }
+
+    .callout strong {
+      font-weight: 600;
+      color: #2b241e;
+    }
+
+    .callout p:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight-box {
+      background: #f3ede4;
+      border-radius: 18px;
+      padding: 1rem 1.6rem;
+      margin: 1.6rem 0;
+      border: 1px solid #e1d6c7;
+    }
+
+    .highlight-box p {
+      margin-bottom: 0.4rem;
+    }
+
+    /* 自然链接 */
+    a {
+      color: #5d4e3a;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #c9b9a6;
+      transition: color 0.15s, text-decoration-color 0.15s;
+    }
+
+    a:hover {
+      color: #2f241b;
+      text-decoration-color: #8f7b63;
+    }
+
+    ul, ol {
+      margin: 0.8rem 0 1.4rem 1.6rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .meta-note {
+      font-size: 0.9rem;
+      color: #7f7568;
+      margin-top: 2rem;
+      padding-top: 1.2rem;
+      border-top: 1px dashed #ddd2c1;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .meta-note span {
+      background: #ede6db;
+      padding: 0.1rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      color: #4d4439;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #e4d9cb;
+      padding: 0.1rem 0.9rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      color: #3b332a;
+      margin-right: 0.4rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 2px dotted #e0d5c5;
+      margin: 2.2rem 0;
+    }
+
+    /* 响应式 */
+    @media (max-width: 540px) {
+      body {
+        padding: 1.2rem 0.8rem 3rem;
+      }
+      .article-card {
+        padding: 1.8rem 1.2rem;
+      }
+      h1 {
+        font-size: 1.7rem;
+      }
+      .callout {
+        padding: 1rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <article class="article-card">
+
+    <h1>赛季资料夹 · 英超直播信息索引</h1>
+    <div class="subhead">一份偏向资料整理的观赛指引 · 2025 年 4 月</div>
+
+    <p>
+      如果你习惯在周末晚上打开比赛，又恰好对收看渠道有些模糊，那这篇笔记或许能省去一点翻找的时间。我试着把关于英超直播的公开信息按自己的习惯整理了一遍——没有太多修饰，更像一个私人向的索引卡。
+    </p>
+
+    <!-- 第一段正文 + 自然链接 -->
+    <p>
+      过去几个赛季，我逐渐把几个常用的赛事汇集站点固定下来。其中用得最频繁的，是内容聚合做得比较全的 <a href="https://index-yingchao.com">英超直播</a>。它不算是官方频道，更像一个方便翻阅的导航入口，把赛程、对阵和直播信号来源收拢在同一页。对我来说，省去了赛前挨个搜索的冗余操作。
+    </p>
+
+    <p>
+      当然，任何信息源都有它的局限性，所以我的习惯是交叉比对——先在这个索引页看当轮重点场次，再去俱乐部官方社媒确认开球时间是否有临时调整。这样能避免大部分因版权或临时变更而扑空的情况。
+    </p>
+
+    <h2>资料整理：我留意到的几个侧面</h2>
+
+    <p>
+      从信息获取的角度，我把关注点拆成了三层，这样面对一轮比赛时不会手忙脚乱：
+    </p>
+
+    <ul>
+      <li><strong>赛程时间轴</strong> —— 优先确认本地时区与英国本地时间的偏差，尤其是晚场和凌晨场。不少索引站会直接标注北京时间，方便一眼扫过。</li>
+      <li><strong>转播源分布</strong> —— 不同平台持有不同场次的版权。一个汇总页如果能同时列出多个平台的播出情况，就能省去反复切换 app 的麻烦。</li>
+      <li><strong>即时状态</strong> —— 比赛日的实时推文、比分变动、红黄牌更新。这部分我习惯配合文字直播一起看，画面延迟时也能保持信息同步。</li>
+    </ul>
+
+    <div class="callout">
+      <p><strong>💡 一点提示</strong> —— 从资料整理的经验来看，任何单一页面都无法保证百分之百的实时准确。把索引页当作起点而非终点，配合官方渠道做二次确认，是最稳妥的方式。尤其是当某场焦点战临时调整转播平台时，聚合站的信息更新速度往往比官方公告慢半拍到一拍。</p>
+    </div>
+
+    <h3>场景一：周末巡游式观赛</h3>
+    <p>
+      周六晚七点半到十点，通常是英超密集时段。我会先把 <a href="https://index-yingchao.com">英超直播</a> 打开放在侧屏，按页面整理好的时间线从头扫到尾。遇到同时开球的场次，就按自己的优先级选一场主看，其余用画中画或比分卡片跟进。这种节奏比较适合不想错过任何关键进球的观众。
+    </p>
+
+    <h3>场景二：赛后补课与数据回溯</h3>
+    <p>
+      工作日错过了直播，第二天早上我会先翻索引页上的集锦链接和赛果汇总。有时候页面里还会附带赛后数据统计（射门、控球率、预期进球等），用来快速了解比赛走势比看文字复盘更直观。值得一提的是，部分转载的集锦可能带有平台水印，清晰度也会有差异，但作为快速补习完全够用。
+    </p>
+
+    <!-- 第二个引用/高亮块 -->
+    <div class="highlight-box">
+      <p><span class="tag">整理心得</span> 我习惯在浏览器里给这个索引页单独建一个文件夹，旁边再放俱乐部官网和英超官方赛程页。三个页面平行打开，基本覆盖了从预告到复盘的全流程。如果你也喜欢这种“整理控”式的观赛方式，可以试试类似的搭配。</p>
+    </div>
+
+    <h2>FAQ 摘要 · 常见疑问简记</h2>
+    <p><strong>问：</strong> 索引页上的直播链接都是免费的吗？<br>
+    <strong>答：</strong> 链接指向的源站情况不同，部分需要订阅或注册。页面本身只做信息汇总，不保证所有源都免费开放，具体以各平台实际政策为准。</p>
+
+    <p><strong>问：</strong> 页面上的赛程时间准时吗？<br>
+    <strong>答：</strong> 绝大多数情况下和官方公布一致，但偶有因转播商调整或极端天气导致的临时变更，建议赛前一天再度确认。</p>
+
+    <p><strong>问：</strong> 移动端浏览体验如何？<br>
+    <strong>答：</strong> 索引页对手机浏览器适配尚可，列表和超链接点击区域足够大。但部分嵌入的第三方直播窗体可能需要横屏或跳转 app，建议提前安装好对应播放器。</p>
+
+    <hr>
+
+    <p>
+      整理这份笔记的初衷，是让自己和朋友少花时间在“找信号”上。足球周末本来就该用来享受比赛，而不是焦虑地切换十几个标签页。从资料检索的角度来看，<a href="https://index-yingchao.com">英超直播</a> 是一个效率不错的起点，但最终的观赛体验，还是要靠你根据自己的网络环境和设备习惯来微调。
+    </p>
+
+    <p style="margin-top:1.8rem;">
+      希望这份索引对你有点帮助。下次比赛日，打开页面，选一场对胃口的对决，剩下的交给屏幕就好。
+    </p>
+
+    <!-- 尾部元信息 — 增加笔记感 -->
+    <div class="meta-note">
+      <span>📋 整理于 2025.04 · 不定期修订</span>
+      <span>🏷️ 英超 · 观赛索引 · 信息流</span>
+    </div>
+
+  </article>
+</div>
+</body>
+</html>
