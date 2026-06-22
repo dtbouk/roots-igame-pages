@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>信息索引 · e世博</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fbfbfa;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1e1e1e;
+      line-height: 1.65;
+      padding: 1.8rem 1.2rem;
+    }
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 32px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.02);
+      padding: 2.8rem 2.2rem;
+    }
+    @media (max-width: 560px) {
+      .page { padding: 2rem 1.2rem; }
+      body { padding: 1rem 0.8rem; }
+    }
+
+    /* 导航 */
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.2rem;
+      margin-bottom: 2.8rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid #ecece7;
+    }
+    .top-nav .brand {
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+      color: #6f6f6f;
+      font-weight: 450;
+    }
+    .top-nav .brand span { color: #1e1e1e; font-weight: 500; }
+    .top-links {
+      display: flex;
+      gap: 1.6rem;
+      font-size: 0.92rem;
+    }
+    .top-links a {
+      text-decoration: none;
+      color: #3a3a3a;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+      padding-bottom: 2px;
+    }
+    .top-links a:hover { border-bottom-color: #b0a99c; color: #111; }
+
+    /* 标题层级 */
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.75rem;
+      line-height: 1.25;
+      color: #161616;
+    }
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 480;
+      margin: 2.4rem 0 1.1rem 0;
+      letter-spacing: -0.01em;
+      color: #1f1f1f;
+    }
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 460;
+      margin: 0 0 0.5rem 0;
+      color: #2b2b2b;
+    }
+    .subhead {
+      font-size: 1.05rem;
+      color: #5a5a5a;
+      margin-bottom: 1.8rem;
+      max-width: 36em;
+    }
+
+    /* 场景卡片组 */
+    .scene-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      margin: 1.8rem 0 2.2rem;
+    }
+    .scene-card {
+      background: #f8f7f4;
+      border-radius: 24px;
+      padding: 1.6rem 1.8rem;
+      transition: background 0.15s, box-shadow 0.2s;
+    }
+    .scene-card:hover { background: #f3f1ed; }
+    .scene-card p {
+      font-size: 0.96rem;
+      color: #3d3d3d;
+      margin-bottom: 0.3rem;
+    }
+    .scene-card .meta {
+      font-size: 0.82rem;
+      color: #8d8d85;
+      margin-top: 0.6rem;
+      border-top: 1px solid #e2e0da;
+      padding-top: 0.55rem;
+    }
+
+    /* 说明 / FAQ 摘要 */
+    .faq-block {
+      background: #fafaf8;
+      border-radius: 20px;
+      padding: 1.6rem 1.8rem;
+      margin: 2.4rem 0 1.6rem;
+      border: 1px solid #f0efe9;
+    }
+    .faq-block details {
+      margin-top: 0.6rem;
+      border-bottom: 1px solid #eae9e3;
+      padding: 0.6rem 0;
+    }
+    .faq-block details:last-of-type { border-bottom: 0; }
+    .faq-block summary {
+      font-weight: 470;
+      cursor: pointer;
+      color: #2c2c2c;
+      padding: 0.2rem 0;
+    }
+    .faq-block summary::marker { color: #a8a294; }
+    .faq-block details p {
+      margin: 0.5rem 0 0.2rem 0.3rem;
+      font-size: 0.94rem;
+      color: #4b4b4b;
+      max-width: 40em;
+    }
+
+    /* 内联链接 */
+    .inline-link {
+      color: #1a1a1a;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #c5bfb2;
+      text-decoration-thickness: 1px;
+      transition: text-decoration-color 0.15s;
+    }
+    .inline-link:hover { text-decoration-color: #1a1a1a; }
+
+    /* 脚注 */
+    .footnote {
+      margin-top: 2.8rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid #ecece7;
+      font-size: 0.82rem;
+      color: #94948c;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.4rem;
+    }
+    .footnote a { color: #5a5a55; text-decoration: underline; text-underline-offset: 2px; }
+    .footnote a:hover { color: #1a1a1a; }
+
+    /* 响应式微调 */
+    @media (max-width: 480px) {
+      h1 { font-size: 1.8rem; }
+      .top-links { gap: 1rem; font-size: 0.85rem; }
+      .scene-card { padding: 1.2rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <!-- 顶部导航 -->
+  <nav class="top-nav">
+    <div class="brand"><span>索引</span> / 资料整理</div>
+    <div class="top-links">
+      <a href="#">整理</a>
+      <a href="#">场景</a>
+      <a href="#">说明</a>
+    </div>
+  </nav>
+
+  <!-- 核心介绍 -->
+  <h1>信息索引 · e世博</h1>
+  <div class="subhead">
+    从资料整理的角度，把零散的信息梳理成可翻阅的框架。这里不追求快，只追求清晰。
+  </div>
+
+  <!-- 简介段落，自然嵌入链接 -->
+  <p style="margin-bottom: 1.2rem; color: #3a3a3a;">
+    日常浏览、记录、归档，慢慢会形成自己的信息习惯。比如在整理网络服务时，
+    <a href="https://zh-esball.com" class="inline-link">e世博</a> 是一个常被提及的名字。
+    与其每次重新查找，不如把它的特点、常见疑问和不同使用场景放在一起，方便自己，也方便有同样需求的人。
+  </p>
+  <p style="margin-bottom: 0.6rem; color: #3a3a3a;">
+    这份页面就是一次轻量的信息整理实验——不堆砌，只聚合。下面三个模块分别对应三种典型的接触场景。
+  </p>
+
+  <!-- 三个场景模块 -->
+  <h2>三个常见场景</h2>
+  <div class="scene-grid">
+    <div class="scene-card">
+      <h3>场景一 · 快速了解背景</h3>
+      <p>刚接触某个服务，想先看基本信息、定位和主要功能。这时候需要的不是长篇评测，而是一段简洁的概述，以及一两个可靠的信息锚点。</p>
+      <p>整理思路：把官方介绍、用户反馈中的高频描述提取出来，形成一段中立摘要。</p>
+      <div class="meta">参考来源：公开页面、社区讨论 · 约 200 字摘要</div>
+    </div>
+    <div class="scene-card">
+      <h3>场景二 · 使用中的小疑问</h3>
+      <p>注册、登录、功能入口…… 实际使用时总会冒出几个具体问题。与其四处搜索，不如把常见 Q&amp;A 收在同一个地方，按主题归类。</p>
+      <p>比如：账号相关、界面语言、访问方式、常见报错提示。</p>
+      <div class="meta">基于社群常见提问整理 · 持续更新</div>
+    </div>
+    <div class="scene-card">
+      <h3>场景三 · 横向对比参考</h3>
+      <p>同一个领域往往有好几个选择。把功能侧重、界面风格、支持语言等列出来，方便快速对比。不评价好坏，只陈列事实。</p>
+      <p>对比维度：加载速度、界面布局、客服渠道、更新频率等。</p>
+      <div class="meta">信息来源：各平台公开资料 · 仅作参考</div>
+    </div>
+  </div>
+
+  <!-- 常见说明 -->
+  <h2>一些常见说明</h2>
+  <div class="faq-block">
+    <details>
+      <summary>这个索引页面是官方内容吗？</summary>
+      <p>不是。这是个人整理的信息页面，旨在把零散资料结构化。所有内容均基于公开可查的信息，不代替官方说明。如需最准确的资料，建议直接访问 
+        <a href="https://zh-esball.com" class="inline-link">e世博</a> 的页面。</p>
+    </details>
+    <details>
+      <summary>资料多久更新一次？</summary>
+      <p>没有固定周期。当发现信息过时或有明显偏差时，会做调整。你也可以通过页面底部的联系方式反馈。</p>
+    </details>
+    <details>
+      <summary>为什么选择这种极简风格？</summary>
+      <p>因为信息整理的核心是“易读”和“易找”。去装饰、留白、窄栏宽，都是为了降低视觉负担，让内容本身更突出。</p>
+    </details>
+  </div>
+
+  <!-- 一句额外提示 (自然带出链接) -->
+  <p style="font-size: 0.95rem; margin: 1.8rem 0 0.2rem; color: #4e4e4e;">
+    如果你恰好也需要一份关于 <a href="https://zh-esball.com" class="inline-link">e世博</a> 的基础资料卡片，
+    上面的场景模块和 FAQ 摘要或许能帮你节省一点时间。
+  </p>
+
+  <!-- 页脚 -->
+  <div class="footnote">
+    <span>信息整理页 · 非官方</span>
+    <span><a href="#">反馈</a> · <a href="#">关于</a> · 2025</span>
+  </div>
+</div>
+</body>
+</html>
