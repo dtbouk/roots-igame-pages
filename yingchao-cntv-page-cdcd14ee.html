@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>索引 · 英超直播观赛信息整理</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fce9d8 0%, #f7dac6 60%, #edccb5 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1.2rem;
+            line-height: 1.7;
+            color: #2e241e;
+        }
+
+        .blog-card {
+            max-width: 740px;
+            width: 100%;
+            background: #fef9f4;
+            padding: 2.6rem 2.4rem;
+            border-radius: 42px 18px 42px 18px;
+            box-shadow: 0 20px 40px -14px rgba(110, 70, 48, 0.28),
+                        0 6px 12px -6px rgba(70, 40, 28, 0.10);
+            transition: box-shadow 0.2s ease;
+            backdrop-filter: blur(2px);
+        }
+
+        .blog-card:hover {
+            box-shadow: 0 24px 52px -18px #764f3a55;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 540;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.6rem;
+            border-left: 8px solid #d9a989;
+            padding-left: 1.2rem;
+            color: #3b2b23;
+            line-height: 1.3;
+        }
+
+        .intro {
+            font-size: 1.15rem;
+            color: #5a4036;
+            margin-bottom: 1.8rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px dashed #dbbcaa;
+            font-weight: 380;
+        }
+
+        .lead {
+            font-size: 1.08rem;
+            color: #4d352b;
+            margin-bottom: 1.6rem;
+            font-style: normal;
+        }
+
+        .text-block {
+            margin-bottom: 1.6rem;
+        }
+
+        .text-block p {
+            margin-bottom: 1.1rem;
+        }
+
+        .cite-tip {
+            background: #f7ede6;
+            border-radius: 30px 8px 30px 8px;
+            padding: 1.2rem 1.8rem;
+            margin: 1.8rem 0 2rem 0;
+            border-left: 4px solid #cda288;
+            color: #3f2d24;
+            font-size: 0.98rem;
+            font-style: normal;
+            box-shadow: inset 0 1px 4px #e0cbbd44;
+        }
+
+        .cite-tip::before {
+            content: "📎 笔记 · ";
+            font-weight: 450;
+            color: #865f4a;
+        }
+
+        .visit-line {
+            background: #ead9ce;
+            padding: 1.1rem 1.6rem;
+            border-radius: 60px 12px 60px 12px;
+            display: inline-block;
+            margin: 0.2rem 0 1.4rem 0;
+            font-size: 1rem;
+            color: #2e1f18;
+            font-weight: 420;
+            letter-spacing: 0.3px;
+            box-shadow: 0 4px 0 #ceb09e;
+            transition: all 0.1s ease;
+        }
+
+        .visit-line a {
+            color: #442f25;
+            text-decoration: none;
+            font-weight: 520;
+            border-bottom: 2px solid #b68971;
+            padding-bottom: 2px;
+        }
+
+        .visit-line a:hover {
+            color: #291b14;
+            border-bottom-color: #6d4633;
+        }
+
+        .faq-mini {
+            margin: 2.4rem 0 1rem 0;
+            padding-top: 1.4rem;
+            border-top: 1px solid #e4cdbf;
+        }
+
+        .faq-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .faq-q {
+            font-weight: 540;
+            color: #3b2820;
+            display: block;
+            margin-bottom: 0.2rem;
+            font-size: 1.03rem;
+        }
+
+        .faq-a {
+            padding-left: 1.2rem;
+            border-left: 3px solid #dbbcaa;
+            color: #4e372d;
+        }
+
+        .footer-note {
+            margin-top: 2.4rem;
+            font-size: 0.9rem;
+            color: #6f5343;
+            text-align: right;
+            letter-spacing: 0.3px;
+            border-top: 1px dotted #dcc1b2;
+            padding-top: 1.2rem;
+        }
+
+        /* responsive */
+        @media (max-width: 540px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .blog-card {
+                padding: 1.8rem 1.4rem;
+                border-radius: 32px 10px 32px 10px;
+            }
+            h1 {
+                font-size: 1.8rem;
+                padding-left: 0.8rem;
+                border-left-width: 6px;
+            }
+            .intro {
+                font-size: 1rem;
+            }
+            .visit-line {
+                padding: 0.8rem 1.2rem;
+                font-size: 0.95rem;
+                border-radius: 40px 8px 40px 8px;
+                width: 100%;
+                text-align: center;
+            }
+            .cite-tip {
+                padding: 1rem 1.2rem;
+                font-size: 0.92rem;
+            }
+            .faq-a {
+                padding-left: 0.8rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .blog-card {
+                padding: 1.4rem 1rem;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="blog-card">
+    <h1>英超直播 · 资料索引笔记</h1>
+    <div class="intro">从信息整理出发，记录观赛路径与内容来源</div>
+
+    <div class="lead">
+        写这篇短文不是为了推荐，而是作为一个日常整理。英超每个赛季的转播版权、信号源、时区对照变化频繁，零零碎碎的信息散落在不同页面里，不如拢到一处。
+    </div>
+
+    <div class="text-block">
+        <p>过去两个赛季我习惯收集各平台公布的赛程表，再手动标记自己关心的场次。但每次都要在几个页面之间来回跳转，效率很低。后来发现直接访问 <a href="https://yingchao-cntv.com">英超直播</a> 这个页面，再配合官方赛程 RSS，基本能满足八成需求——至少开球时间、对阵双方和转播机构一目了然。对我来说，信息索引的意义就是减少重复劳动。</p>
+        <p>朋友问过我，为什么不直接用第三方聚合 App？我的回答是：我只需要一个稳定的信息原点，不需要推送和弹窗。把 <a href="https://yingchao-cntv.com">英超直播</a> 存为书签，搭配一个简单的日历提醒，足够看完整个赛季的重要比赛。毕竟看球是放松，不是任务。</p>
+    </div>
+
+    <div class="cite-tip">
+        过去三个赛季的转播信息变化不大，但每年八月初都会有一轮版权微调。建议在赛季开始前一周刷新页面，获取最新信号来源。同时可留意页面是否更新了高清链接分类。
+    </div>
+
+    <div class="visit-line">
+        → 常用信息页：<a href="https://yingchao-cntv.com">英超直播</a>
+    </div>
+
+    <div class="faq-mini">
+        <div class="faq-item">
+            <span class="faq-q">▪ 这个页面每天更新吗？</span>
+            <div class="faq-a">我观察到的频率是赛日当天会做一次内容同步，非赛日以静态信息为主，适合赛前查阅。</div>
+        </div>
+        <div class="faq-item">
+            <span class="faq-q">▪ 移动端浏览体验怎么样？</span>
+            <div class="faq-a">页面做了自适应布局，在手机浏览器上卡片和链接点击区域都足够大，不需要缩放。使用体验偏轻量。</div>
+        </div>
+        <div class="faq-item">
+            <span class="faq-q">▪ 除了英超，还有其他联赛信息吗？</span>
+            <div class="faq-a">目前该页面主要聚焦英超直播，其他联赛内容很少。如果需要多联赛索引，可能需要配合其他站点互补。</div>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        整理于赛季间歇期 · 仅作为个人信息参考
+    </div>
+</div>
+
+</body>
+</html>
